@@ -1,8 +1,8 @@
 
 import React, { Component } from 'react';
-import "bootstrap/dist/css/bootstrap.min.css" ;
+import "bootstrap/dist/css/bootstrap.min.css";
 
-class Test extends Component {
+class Todo extends Component {
 
   constructor(props) {
     super(props);
@@ -27,8 +27,6 @@ class Test extends Component {
 
       }
     )
-
-
   }
 
   handleChange = (e) => {
@@ -64,7 +62,7 @@ class Test extends Component {
                     <form className="row row-cols-lg-auto g-3 justify-content-center align-items-center mb-4 pb-2" onSubmit={this.add}>
                       <div className="col-12">
                         <div className="form-outline">
-                          <input type="text"  className="form-control" onChange={this.handleChange} value={this.state.taskvalue}/>
+                          <input type="text" className="form-control" onChange={this.handleChange} value={this.state.taskvalue} />
                         </div>
                       </div>
                       <div className="col-12">
@@ -80,13 +78,13 @@ class Test extends Component {
                         </tr>
                       </thead>
                       <tbody>
-                      {this.state.tasks.map((t,index)=>
-                                <tr key={t.id}>
-                                <td >{t.id}</td>
-                                <td>{t.task}</td>
-                                <td><button type="button" className="btn btn-danger" onClick={()=>this.delete(t)}> Delete</button></td>
-                                </tr>
-                            )}
+                        {this.state.tasks.map((t, index) =>
+                          <tr key={t.id}>
+                            <td >{t.id}</td>
+                            <td>{t.task}</td>
+                            <td><button type="button" className="btn btn-danger" onClick={() => this.delete(t)}> Delete</button></td>
+                          </tr>
+                        )}
                       </tbody>
                     </table>
                   </div>
@@ -100,4 +98,4 @@ class Test extends Component {
   }
 }
 
-export default Test;
+export default Todo;
